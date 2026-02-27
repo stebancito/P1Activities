@@ -26,10 +26,10 @@ class PlanetasActivity : AppCompatActivity() {
             finish()
         }
 
-//        val btnSiguiente = findViewById<Button>(R.id.btnSiguientePlanetas)
-//        btnSiguiente.setOnClickListener {
-//            val intent = Intent(this, LunasActivity::class.java)
-//            startActivity(intent)
-//        }
+        val btnSiguiente = findViewById<Button>(R.id.btnSiguientePlanetas)
+        btnSiguiente.setOnClickListener {
+            val intent = Intent(this, TierraActivity::class.java)
+            startActivity(intent)
+        }
     }
 }

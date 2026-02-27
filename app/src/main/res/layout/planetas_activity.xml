@@ -104,7 +104,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="← Sistema Solar"
+            android:text="Sistema Solar"
             android:textColor="#FFFFFF"
             android:backgroundTint="#457B9D"
             android:layout_marginEnd="8dp"/>
@@ -114,7 +114,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Lunas →"
+            android:text="Tierra"
             android:textColor="#000000"
             android:backgroundTint="#A8DADC"
             android:layout_marginStart="8dp"/>
