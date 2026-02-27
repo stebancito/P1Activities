@@ -4,6 +4,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:id="@+id/main"
     android:background="#14213D">
 
     <TextView
@@ -20,16 +21,16 @@
         android:layout_marginTop="50dp"/>
 
     <!-- ACA PON LA IMAGEN ISAAC -->
-    <ImageView
-        android:id="@+id/imgSistemaSolar"
-        android:layout_width="220dp"
-        android:layout_height="220dp"
-        android:src="@drawable/sistema_solar"
-        android:scaleType="centerCrop"
-        app:layout_constraintTop_toBottomOf="@id/txtTituloSistema"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="30dp"/>
+<!--    <ImageView-->
+<!--        android:id="@+id/imgSistemaSolar"-->
+<!--        android:layout_width="220dp"-->
+<!--        android:layout_height="220dp"-->
+<!--        android:src="@drawable/sistema_solar"-->
+<!--        android:scaleType="centerCrop"-->
+<!--        app:layout_constraintTop_toBottomOf="@id/txtTituloSistema"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        android:layout_marginTop="30dp"/>-->
 
     <TextView
         android:id="@+id/txtDescripcionSistema"

@@ -21,14 +21,12 @@ class GalaxiaActivity : AppCompatActivity() {
             insets
         }
 
-        // Botón siguiente
         val btnSiguiente = findViewById<Button>(R.id.btnSiguiente)
         btnSiguiente.setOnClickListener {
             val intent = Intent(this, SistemaSolarActivity::class.java)
             startActivity(intent)
         }
 
-        // Botón anterior
         val btnAnterior = findViewById<Button>(R.id.btnAnterior)
         btnAnterior.setOnClickListener {
             finish()
