@@ -2,82 +2,107 @@
 <androidx.constraintlayout.widget.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:id="@+id/main"
-    android:background="#14213D">
+    android:background="#2C1A0F">
 
-    <TextView
-        android:id="@+id/txtTituloSistema"
-        android:layout_width="wrap_content"
+
+    <LinearLayout
+        android:id="@+id/contenedorCentral"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="Sistema Solar "
-        android:textSize="28sp"
-        android:textStyle="bold"
-        android:textColor="#FCA311"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:padding="24dp"
+        android:background="#3E2723"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="50dp"/>
-
-    <!-- ACA PON LA IMAGEN ISAAC -->
-<!--    <ImageView-->
-<!--        android:id="@+id/imgSistemaSolar"-->
-<!--        android:layout_width="220dp"-->
-<!--        android:layout_height="220dp"-->
-<!--        android:src="@drawable/sistema_solar"-->
-<!--        android:scaleType="centerCrop"-->
-<!--        app:layout_constraintTop_toBottomOf="@id/txtTituloSistema"-->
-<!--        app:layout_constraintStart_toStartOf="parent"-->
-<!--        app:layout_constraintEnd_toEndOf="parent"-->
-<!--        android:layout_marginTop="30dp"/>-->
-
-    <TextView
-        android:id="@+id/txtDescripcionSistema"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:text="El Sistema Solar está formado por el Sol y todos los cuerpos celestes que orbitan a su alrededor, incluyendo planetas, asteroides y cometas."
-        android:textSize="16sp"
-        android:textColor="#FFFFFF"
-        android:padding="20dp"
-        android:background="#1F4068"
-        android:textAlignment="center"
-        app:layout_constraintTop_toBottomOf="@id/txtTituloSistema"
+        app:layout_constraintBottom_toTopOf="@id/layoutBotones"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:layout_margin="24dp"/>
+        android:layout_margin="24dp">
 
-    <View
-        android:layout_width="150dp"
-        android:layout_height="3dp"
-        android:background="#FCA311"
-        app:layout_constraintTop_toBottomOf="@id/txtDescripcionSistema"
-        app:layout_constraintStart_toStartOf="parent"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="10dp"/>
 
-    <Button
-        android:id="@+id/btnAnteriorSistema"
+        <TextView
+            android:id="@+id/txtTituloSistema"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Sistema Solar"
+            android:textSize="30sp"
+            android:textStyle="bold"
+            android:textColor="#FFD54F"
+            android:gravity="center"/>
+
+
+        <View
+            android:layout_width="120dp"
+            android:layout_height="3dp"
+            android:layout_marginTop="8dp"
+            android:background="#FF9800"/>
+
+        <!-- IMAGEN ISAAAAAAAAC -->
+        <!--
+        <ImageView
+            android:id="@+id/imgSistemaSolar"
+            android:layout_width="220dp"
+            android:layout_height="220dp"
+            android:src="@drawable/sistema_solar"
+            android:scaleType="centerCrop"
+            android:layout_marginTop="20dp"/>
+        -->
+
+
+        <TextView
+            android:id="@+id/txtDescripcionSistema"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="El Sistema Solar está formado por el Sol y todos los cuerpos celestes que orbitan a su alrededor, incluyendo planetas, asteroides y cometas."
+            android:textSize="16sp"
+            android:textColor="#FFE0B2"
+            android:textAlignment="center"
+            android:layout_marginTop="20dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="\n Estrella central: El Sol\n 8 planetas principales\n Nuestro hogar: La Tierra"
+            android:textColor="#FFF3E0"
+            android:textSize="15sp"
+            android:textAlignment="center"
+            android:layout_marginTop="10dp"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/layoutBotones"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="← Galaxia"
-        android:backgroundTint="#1F4068"
-        android:textColor="#FFFFFF"
+        android:orientation="horizontal"
+        android:layout_margin="16dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toStartOf="@id/btnSiguienteSistema"
-        android:layout_margin="16dp"/>
+        app:layout_constraintEnd_toEndOf="parent">
 
-    <Button
-        android:id="@+id/btnSiguienteSistema"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:text="Planetas →"
-        android:backgroundTint="#FCA311"
-        android:textColor="#000000"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toEndOf="@id/btnAnteriorSistema"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:layout_margin="16dp"/>
+        <Button
+            android:id="@+id/btnAnteriorSistema"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Galaxia"
+            android:textColor="#000000"
+            android:backgroundTint="#FFB74D"
+            android:layout_marginEnd="8dp"/>
+
+        <Button
+            android:id="@+id/btnSiguienteSistema"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Planetas "
+            android:textColor="#000000"
+            android:backgroundTint="#FFD54F"
+            android:layout_marginStart="8dp"/>
+
+    </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
