@@ -13,7 +13,6 @@ class PaisesActivity : AppCompatActivity() {
 
         val btnAnterior = findViewById<Button>(R.id.btnAnteriorPaises)
         val btnSiguiente = findViewById<Button>(R.id.btnFinalizar)
-        // puedes cambiar el id a btnSiguientePaises si quieres más claridad
 
         btnAnterior.setOnClickListener {
             finish()

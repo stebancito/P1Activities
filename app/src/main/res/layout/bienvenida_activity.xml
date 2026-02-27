@@ -7,7 +7,6 @@
     android:layout_height="match_parent"
     android:background="@drawable/fondo_bienvenida">
 
-    <!-- Círculo decorativo superior -->
     <View
         android:layout_width="150dp"
         android:layout_height="150dp"
@@ -17,7 +16,6 @@
         android:layout_marginTop="-50dp"
         android:layout_marginStart="-50dp"/>
 
-    <!-- Círculo decorativo inferior -->
     <View
         android:layout_width="180dp"
         android:layout_height="180dp"
@@ -27,11 +25,7 @@
         android:layout_marginBottom="-60dp"
         android:layout_marginEnd="-60dp"/>
 
-    <!-- Título -->
 
-    <!-- Descripción -->
-
-    <!-- Botón Comenzar -->
     <TextView
         android:id="@+id/txtTituloBienvenida"
         android:layout_width="wrap_content"
