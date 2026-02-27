@@ -8,51 +8,55 @@
     android:background="#1C1C1C"
     android:padding="24dp">
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Ecatepunk"
-        android:textSize="30sp"
-        android:textStyle="bold"
-        android:textColor="#FFFFFF"
-        android:gravity="center"
-        android:letterSpacing="0.1"
-        android:layout_marginBottom="8dp"/>
-
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Estética urbana, concreto y metal. La perdición del Estado de México"
-        android:textSize="14sp"
-        android:textColor="#BDBDBD"
-        android:gravity="center"
-        android:layout_marginBottom="24dp"/>
-
-    <FrameLayout
-        android:layout_width="match_parent"
-        android:layout_height="200dp"
-        android:layout_marginBottom="20dp"
-        android:background="#2E2E2E"
-        android:padding="8dp">
-
-        <ImageView
-            android:id="@+id/imgEcatepunk"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:scaleType="centerCrop"/>
-    </FrameLayout>
-
-    <View
-        android:layout_width="80dp"
-        android:layout_height="4dp"
-        android:layout_gravity="center"
-        android:background="#757575"
-        android:layout_marginBottom="16dp"/>
-
-    <View
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="1"/>
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:gravity="center">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Ecatepunk"
+            android:textSize="30sp"
+            android:textStyle="bold"
+            android:textColor="#FFFFFF"
+            android:gravity="center"
+            android:letterSpacing="0.1"
+            android:layout_marginBottom="8dp"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Estética urbana, concreto y metal. La perdición del Estado de México"
+            android:textSize="14sp"
+            android:textColor="#BDBDBD"
+            android:gravity="center"
+            android:layout_marginBottom="24dp"/>
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:layout_marginBottom="20dp"
+            android:background="#2E2E2E"
+            android:padding="8dp">
+
+            <ImageView
+                android:id="@+id/imgEcatepunk"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="centerCrop"/>
+        </FrameLayout>
+
+        <View
+            android:layout_width="80dp"
+            android:layout_height="4dp"
+            android:layout_gravity="center"
+            android:background="#757575"
+            android:layout_marginBottom="16dp"/>
+
+    </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
