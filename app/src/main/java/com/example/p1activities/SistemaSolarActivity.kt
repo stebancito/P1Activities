@@ -26,10 +26,10 @@ class SistemaSolarActivity : AppCompatActivity() {
             finish()
         }
 
-//        val btnSiguiente = findViewById<Button>(R.id.btnSiguienteSistema)
-//        btnSiguiente.setOnClickListener {
-//            val intent = Intent(this, PlanetasActivity::class.java)
-//            startActivity(intent)
-//        }
+        val btnSiguiente = findViewById<Button>(R.id.btnSiguienteSistema)
+        btnSiguiente.setOnClickListener {
+            val intent = Intent(this, PlanetasActivity::class.java)
+            startActivity(intent)
+        }
     }
 }

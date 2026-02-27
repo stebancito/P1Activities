@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:id="@+id/main"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#0F1A2B">
+
+    <TextView
+        android:id="@+id/txtTituloPlanetas"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Planetas"
+        android:textSize="26sp"
+        android:textStyle="bold"
+        android:textColor="#FFFFFF"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="50dp"/>
+
+    <!--<ImageView
+        android:id="@+id/imgPlaneta"
+        android:layout_width="180dp"
+        android:layout_height="180dp"
+        android:src="@drawable/planeta"
+        android:scaleType="centerCrop"
+        app:layout_constraintTop_toBottomOf="@id/txtTituloPlanetas"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="40dp"/>-->
+
+    <LinearLayout
+        android:id="@+id/tarjetaInfo"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="#FFFF"
+        android:padding="20dp"
+        app:layout_constraintTop_toBottomOf="@id/txtTituloPlanetas"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_margin="24dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="¿Qué es un planeta?"
+            android:textColor="#000000"
+            android:textStyle="bold"
+            android:textSize="16sp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Un planeta es un cuerpo celeste que orbita una estrella y no emite luz propia."
+            android:textColor="#333333"
+            android:textSize="14sp"
+            android:layout_marginTop="8dp"/>
+
+    </LinearLayout>
+
+    <!-- Botón anterior -->
+    <Button
+        android:id="@+id/btnAnteriorPlanetas"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="← Sistema Solar"
+        android:backgroundTint="#1F4068"
+        android:textColor="#FFFFFF"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/btnSiguientePlanetas"
+        android:layout_margin="16dp"/>
+
+    <Button
+        android:id="@+id/btnSiguientePlanetas"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Lunas →"
+        android:backgroundTint="#4CC9F0"
+        android:textColor="#000000"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@id/btnAnteriorPlanetas"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_margin="16dp"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

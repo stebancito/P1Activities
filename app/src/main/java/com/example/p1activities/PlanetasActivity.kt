@@ -8,12 +8,12 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 
-class GalaxiaActivity : AppCompatActivity() {
+class PlanetasActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
-        setContentView(R.layout.galaxia_activity)
+        setContentView(R.layout.planetas_activity)
 
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
@@ -21,14 +21,15 @@ class GalaxiaActivity : AppCompatActivity() {
             insets
         }
 
-        val btnSiguiente = findViewById<Button>(R.id.btnSiguiente)
-        btnSiguiente.setOnClickListener {
-            val intent = Intent(this, SistemaSolarActivity::class.java)
-            startActivity(intent)
+        val btnAnterior = findViewById<Button>(R.id.btnAnteriorPlanetas)
+        btnAnterior.setOnClickListener {
+            finish()
         }
 
-        val btnAnterior = findViewById<Button>(R.id.btnAnterior)
-        btnAnterior.setOnClickListener {
-        }
+//        val btnSiguiente = findViewById<Button>(R.id.btnSiguientePlanetas)
+//        btnSiguiente.setOnClickListener {
+//            val intent = Intent(this, LunasActivity::class.java)
+//            startActivity(intent)
+//        }
     }
 }
