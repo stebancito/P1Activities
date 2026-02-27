@@ -42,7 +42,7 @@
         android:padding="20dp"
         android:background="#1F4068"
         android:textAlignment="center"
-        app:layout_constraintTop_toBottomOf="@id/imgSistemaSolar"
+        app:layout_constraintTop_toBottomOf="@id/txtTituloSistema"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         android:layout_margin="24dp"/>
