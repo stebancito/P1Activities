@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -10,10 +11,10 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="0dp"
+        android:layout_height="442dp"
         android:layout_weight="1"
-        android:orientation="vertical"
-        android:gravity="center">
+        android:gravity="center"
+        android:orientation="vertical">
 
         <TextView
             android:layout_width="match_parent"
@@ -27,11 +28,17 @@
 
         <TextView
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="88dp"
             android:gravity="center"
             android:text="Explora las culturas, fronteras y diversidad de nuestro planeta."
             android:textColor="#FFF3E0"
             android:textSize="16sp" />
+
+        <ImageView
+            android:id="@+id/imageView8"
+            android:layout_width="346dp"
+            android:layout_height="332dp"
+            app:srcCompat="@drawable/f37832ea18d8cba7f336973e39ed10a0_69dc896fad5e9611963b0fddaa198834" />
 
     </LinearLayout>
 

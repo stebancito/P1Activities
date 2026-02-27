@@ -2,6 +2,7 @@
 <androidx.constraintlayout.widget.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -12,33 +13,35 @@
         android:id="@+id/contenedorCentral"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:gravity="center"
-        android:padding="24dp"
+        android:layout_margin="24dp"
         android:background="#3E2723"
-        app:layout_constraintTop_toTopOf="parent"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:padding="24dp"
         app:layout_constraintBottom_toTopOf="@id/layoutBotones"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:layout_margin="24dp">
+        app:layout_constraintHorizontal_bias="0.666"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.26">
 
 
         <TextView
             android:id="@+id/txtTituloSistema"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:gravity="center"
             android:text="Sistema Solar"
-            android:textSize="30sp"
-            android:textStyle="bold"
             android:textColor="#FFD54F"
-            android:gravity="center"/>
+            android:textSize="30sp"
+            android:textStyle="bold" />
 
 
         <View
             android:layout_width="120dp"
             android:layout_height="3dp"
             android:layout_marginTop="8dp"
-            android:background="#FF9800"/>
+            android:background="#FF9800" />
 
         <!-- IMAGEN ISAAAAAAAAC -->
         <!--
@@ -56,20 +59,20 @@
             android:id="@+id/txtDescripcionSistema"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
             android:text="El Sistema Solar está formado por el Sol y todos los cuerpos celestes que orbitan a su alrededor, incluyendo planetas, asteroides y cometas."
-            android:textSize="16sp"
-            android:textColor="#FFE0B2"
             android:textAlignment="center"
-            android:layout_marginTop="20dp"/>
+            android:textColor="#FFE0B2"
+            android:textSize="16sp" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
             android:text="\n Estrella central: El Sol\n 8 planetas principales\n Nuestro hogar: La Tierra"
-            android:textColor="#FFF3E0"
-            android:textSize="15sp"
             android:textAlignment="center"
-            android:layout_marginTop="10dp"/>
+            android:textColor="#FFF3E0"
+            android:textSize="15sp" />
 
     </LinearLayout>
 
@@ -104,5 +107,19 @@
             android:layout_marginStart="8dp"/>
 
     </LinearLayout>
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="292dp"
+        android:layout_height="164dp"
+        android:layout_marginStart="59dp"
+        android:layout_marginTop="27dp"
+        android:layout_marginEnd="60dp"
+        android:layout_marginBottom="58dp"
+        app:layout_constraintBottom_toTopOf="@+id/layoutBotones"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/contenedorCentral"
+        app:srcCompat="@drawable/sistema_solar_1" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
