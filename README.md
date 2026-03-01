@@ -15,7 +15,7 @@
 <br>
 
 **ALUMNOS:**                   
-**RÍOS GÓMEZ JUAN ESTEBAN - 2023630116**
+**RÍOS GÓMEZ JUAN ESTEBAN - 2023630116**   
 **ROJAS BARRÓN ISAAC - 2023630463**   
 
 <br>
