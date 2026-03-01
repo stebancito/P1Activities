@@ -2,18 +2,46 @@
 Primera practica del curso de Desarrollo de Aplicaciones Móviles Nativas
 
 ## Contenidos
-- [Aplicación de Navegación por Activities](#aplicación-de-navegación-por-activities)
-- [Descripción de las Activities](#descripción-de-las-activities)
-- [Manejo de Transiciones y Ciclo de Vida](#manejo-de-transiciones-y-ciclo-de-vida)
-- [Instrucciones para Ejecutar la Aplicación](#instrucciones-para-ejecutar-la-aplicación)
-  - [Prerrequisitos](#prerrequisitos)
-  - [Pasos para la Ejecución](#pasos-para-la-ejecución)
+- [1. Instalación de Herramientas](#1-instalación-de-herramientas)
+- [2. Navegación Creativa](#2-navegación-creativa-aplicación-de-navegación-por-activities)
+  - [Descripción de las Activities](#1-descripción-de-las-activities)
+  - [Manejo de Transiciones y Ciclo de Vida](#2-manejo-de-transiciones-y-ciclo-de-vida)
+  - [Instrucciones para Ejecutar la Aplicación](#3-instrucciones-para-ejecutar-la-aplicación)
+- [3. Comparación de equipos](#3-comparación-de-equipos)
+# 1-  Instalación de Herramientas
 
-# Aplicación de Navegación por Activities
+A continuación se muestran las capturas de pantalla del IDE (Android Studio) con el emulador ejecutando correctamente la aplicación **"Hello Android"**.
+
+| Integrante | Evidencia |
+|------------|------------|
+| Rios Gómez Juan Esteban | <details><summary>Ver captura</summary><img src="images/EstebanSS.png" width="500"></details> |
+| Rojas Barrón Isaac | <details><summary>Ver captura</summary><img src="images/IsaacSS.png" width="500"></details> |
+
+Evidencias - Configuración de Flutter
+
+A continuación se presentan las evidencias solicitadas sobre la verificación del entorno de Flutter y la ejecución de una aplicación de prueba en el emulador.
+
+Ejecución de `flutter doctor`
+
+| Integrante | Evidencia |
+|------------|------------|
+| Ríos Gómez Juan Esteban | <details><summary>Ver captura</summary><img src="images/flutter_doctor_integrante1.png" width="500"></details> |
+| Rojas Barrón Isaac | <details><summary>Ver captura</summary><img src="images/flutter_doctor_integrante2.png" width="500"></details> |
+
+---
+Creación y ejecución de `flutter create hello_flutter`
+
+| Integrante | Evidencia |
+|------------|------------|
+| Ríos Gómez Juan Esteban | <details><summary>Ver captura</summary><img src="images/hello_flutter_integrante1.png" width="500"></details> |
+| Rojas Barrón Isaac | <details><summary>Ver captura</summary><img src="images/hello_flutter_integrante2.png" width="500"></details> |
+
+
+# 2- Navegación Creativa (Aplicación de Navegación por Activities)
 
 Esta es una aplicación de ejemplo desarrollada en Android Studio que demuestra la navegación entre múltiples Activities. La aplicación guía al usuario a través de un viaje conceptual desde la Vía Láctea hasta un destino final ficticio llamado "Ecatepunk".
 
-## Descripción de las Activities
+## 1. Descripción de las Activities
 
 La aplicación consta de las siguientes Activities, cada una representando una pantalla con un tema específico:
 
@@ -38,9 +66,136 @@ La aplicación consta de las siguientes Activities, cada una representando una p
 7.  **`EcatepunkActivity`**
     - **Descripción:** Es la pantalla final de la aplicación. Contiene un botón "Anterior" que regresa a `PaisesActivity` con `finish()` y un botón "Finalizar" que cierra completamente la aplicación usando `finishAffinity()`.
 
-## Manejo de Transiciones y Ciclo de Vida
+## 2. Manejo de Transiciones y Ciclo de Vida
 
-## Instrucciones para Ejecutar la Aplicación
+### 1) Manejo de Transiciones entre Activities
+
+La navegación entre pantallas se implementó mediante **Intents explícitos**, permitiendo cambiar de una `Activity` a otra dentro de la misma aplicación.
+
+### Implementación
+
+```kotlin
+val intent = Intent(this, OtraActivity::class.java)
+startActivity(intent)
+```
+
+### Funcionamiento
+
+- `Intent` define la Activity destino.
+- `startActivity()` inicia la nueva Activity.
+- Android coloca la nueva Activity en el **Back Stack**.
+- La Activity actual pasa a estado `onPause()` y posteriormente `onStop()` si deja de ser visible.
+
+### Comportamiento del Back Stack
+
+Android maneja una pila (LIFO):
+
+```
+Bienvenida
+   ↓
+SistemaSolar
+   ↓
+Planetas
+   ↓
+Tierra
+```
+
+Cuando el usuario presiona el botón **Back**:
+
+1. Se ejecuta `onPause()`
+2. Luego `onStop()`
+3. Finalmente `onDestroy()` en la Activity actual
+4. La Activity anterior pasa por `onRestart()` → `onStart()` → `onResume()`
+
+Esto permite una navegación natural sin necesidad de administrar manualmente la pila.
+
+---
+
+### 2) Manejo del Ciclo de Vida de Android
+
+Cada `Activity` sigue el ciclo de vida administrado por el sistema operativo Android.
+
+En el proyecto se utilizó principalmente el método `onCreate()`:
+
+```kotlin
+override fun onCreate(savedInstanceState: Bundle?) {
+    super.onCreate(savedInstanceState)
+    setContentView(R.layout.activity_name)
+}
+```
+
+### Flujo normal de ejecución
+
+Al abrir una Activity:
+
+```
+onCreate()
+onStart()
+onResume()
+```
+
+Al cambiar a otra Activity:
+
+```
+Activity actual → onPause()
+                 → onStop()
+
+Nueva Activity  → onCreate()
+                 → onStart()
+                 → onResume()
+```
+
+---
+
+### 3) Gestión Implícita del Ciclo de Vida
+
+No fue necesario sobrescribir métodos como:
+
+- `onPause()`
+- `onStop()`
+- `onRestart()`
+- `onDestroy()`
+
+Android gestiona automáticamente:
+
+- La liberación temporal de recursos
+- La restauración de la Activity anterior
+- La destrucción cuando el sistema requiere memoria
+
+Dado que la aplicación es informativa y no maneja datos dinámicos, no fue necesario un control avanzado del estado.
+
+---
+
+### 4) Manejo ante Rotación de Pantalla
+
+En esta implementación:
+
+- No se utilizó `onSaveInstanceState()`
+- No se restauraron datos manualmente
+
+Cuando ocurre una rotación:
+
+- La Activity se destruye
+- Se vuelve a ejecutar `onCreate()`
+- Se reconstruye la interfaz
+
+Como la aplicación muestra contenido estático, no se pierde información relevante.
+
+---
+
+### 5) Control de Finalización de Activities
+
+En caso de utilizar:
+
+```kotlin
+finish()
+```
+
+Se elimina la Activity actual del Back Stack, evitando que el usuario pueda regresar a ella con el botón Back.
+
+---
+
+##  3. Instrucciones para Ejecutar la Aplicación
 
 Sigue estos pasos para ejecutar la aplicación en un entorno de desarrollo:
 
@@ -79,3 +234,40 @@ Sigue estos pasos para ejecutar la aplicación en un entorno de desarrollo:
 
 5.  **Interactuar con la App:**
     - Una vez instalada, la aplicación se abrirá automáticamente mostrando `BienvenidaActivity`. Presiona "Comenzar" y utiliza los botones "Siguiente" y "Anterior" para navegar a través de las pantallas. Finalmente, presiona "Finalizar" en la última pantalla para cerrar la app.
+
+## 4. Capturas de pantalla del funcionamiento de la aplicación
+| Pantalla | Vista |
+|----------|--------|
+| Menú principal | <details><summary>Ver</summary><img src="images/MenuPrincipal.jpeg" width="250"></details> |
+| Galaxia | <details><summary>Ver</summary><img src="images/Galaxia.jpeg" width="250"></details> |
+| Sistema Solar | <details><summary>Ver</summary><img src="images/SistemaSolar.jpeg" width="250"></details> |
+| Planetas | <details><summary>Ver</summary><img src="images/Planetas.jpeg" width="250"></details> |
+| Planeta Tierra | <details><summary>Ver</summary><img src="images/Tierra.jpeg" width="250"></details> |
+| Países | <details><summary>Ver</summary><img src="images/Paises.jpeg" width="250"></details> |
+| Ecatepunk | <details><summary>Ver</summary><img src="images/Ecatepec.jpeg" width="250"></details> |
+
+# 3- Comparación de equipos
+
+
+- **PC 1:** HP Victus 15-fb1xxx  
+  - Procesador: AMD Ryzen 5 7535HS  
+  - RAM: 8 GB  
+  - GPU: 4 GB  
+  - Almacenamiento: 477 GB  
+
+- **PC 2:** ASUS TUF Gaming F15 FX506HCB  
+  - Procesador: Intel Core i5-11400H (11ª Gen)  
+  - RAM: 24 GB  
+  - GPU: 4 GB  
+  - Almacenamiento: 477 GB  
+
+---
+
+### Resultado de la Comparación
+
+| Posición | Equipo | Razón por la que ganó / quedó en esa posición | Imagen de referencia |
+|----------|--------|----------------------------------------------|----------------------|
+| 🥇 1 | ASUS TUF Gaming F15 (i5-11400H, 24GB RAM) | Tiene mayor cantidad de RAM (24GB vs 8GB), lo que mejora el rendimiento en multitarea, desarrollo, emuladores y programas pesados. | <details><summary>Ver</summary><img src="images/asus.png" width="250"></details> |
+| 🥈 2 | HP Victus 15 (Ryzen 5 7535HS, 8GB RAM) | Buen procesador, pero la menor cantidad de RAM limita el rendimiento en tareas exigentes. | <details><summary>Ver</summary><img src="images/victus.png" width="250"></details>|
+
+---
