@@ -1,5 +1,40 @@
-# P1AppsMovilesNativas
-Primera practica del curso de Desarrollo de Aplicaciones Móviles Nativas
+<div align="center">
+
+# INSTITUTO POLITÉCNICO NACIONAL
+## "Escuela Superior de Cómputo"
+
+<br>
+
+### DESARROLLO DE APLICACIONES 
+### MOVILES NATIVAS 
+<br>
+
+## PRÁCTICA 1: Instalación y Funcionamiento de los Entornos Móviles
+
+<br>
+<br>
+
+**ALUMNOS:**                   
+**ROJAS BARRÓN ISAAC - 2023630463**   
+**RÍOS GÓMEZ JUAN ESTEBAN - 2023630116**
+
+<br>
+
+**PROFESOR:**
+**GABRIEL HURTADO AVILÉS**
+
+<br>
+
+**GRUPO:**
+**7CV4**
+
+<br>
+
+**FECHA DE ENTREGA:**
+**27 de enero de 2026**
+
+</div>
+
 
 ## Contenidos
 - [1. Instalación de Herramientas](#1-instalación-de-herramientas)
